@@ -8,11 +8,11 @@ from datetime import datetime,date
 
 
 class Listaprecios(models.Model):
-    id                     = models.SlugField(primary_key = True, max_length =256)
-    nombre_producto        = models.CharField(max_length=256,null=True)
-    precio_producto        = models.IntegerField(null=True)
-    categoria_producto     = models.CharField(max_length=20,null=True)
-    # subcategoria_producto  = models.CharField(max_length=20,null=True,default=' ')
+    id                     = models.SlugField(primary_key = True, max_length =30)
+    nombre_producto        = models.CharField(max_length=30)
+    precio_producto        = models.IntegerField()
+    categoria_producto     = models.CharField(max_length=20)
+
 
     def __str__(self):
         return self.nombre_producto
@@ -35,8 +35,8 @@ class Listaprecios(models.Model):
 class Pedidos(models.Model):
 
     fecha             = models.DateField(null=True, default=date.today())
-    nombre_cliente    = models.CharField(max_length=256,null=True)
-    comentario        = models.CharField(max_length=256,null=True)
+    nombre_cliente    = models.CharField(max_length=20)
+    comentario        = models.CharField(max_length=20)
 
     def __str__(self):
         return self.nombre_cliente
